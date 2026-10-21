@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-slate-100 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+@keyframes flash-up {
+  0% { background-color: rgb(16 185 129 / 0.45); }
+  100% { background-color: transparent; }
+}
+@keyframes flash-down {
+  0% { background-color: rgb(244 63 94 / 0.45); }
+  100% { background-color: transparent; }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.flash-up { animation: flash-up 0.8s ease-out; }
+.flash-down { animation: flash-down 0.8s ease-out; }
+.slide-in { animation: slide-in 0.25s ease-out; }
