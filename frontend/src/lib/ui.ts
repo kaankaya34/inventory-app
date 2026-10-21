@@ -15,9 +15,6 @@ export const timeOf = (iso: string) => new Date(iso).toLocaleTimeString('tr-TR')
 export const dateTimeOf = (iso: string) =>
   new Date(iso).toLocaleString('tr-TR', { dateStyle: 'medium', timeStyle: 'short' })
 
-const EMOJI: Record<string, string> = { HP: '🎧', SW: '⌚', KB: '⌨️', MN: '🖥️', SD: '💾' }
-export const productEmoji = (sku: string) => EMOJI[sku.split('-')[1] ?? ''] ?? '📦'
-
 export const groupCardNumber = (v: string) =>
   v.replace(/\D/g, '').slice(0, 19).replace(/(.{4})/g, '$1 ').trim()
 

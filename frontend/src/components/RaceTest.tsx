@@ -26,7 +26,7 @@ export function RaceTest({ products, barcode, onBarcodeChange, running, report, 
 
   return (
     <div className={card}>
-      <h2 className="mb-1 font-semibold">🧪 Race Condition (Yük) Testi</h2>
+      <h2 className="mb-1 font-semibold">Race Condition (Yük) Testi</h2>
       <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
         Backend içinden <code>Task.WhenAll</code> ile aynı anda paralel rezervasyon isteği gönderir; stok kadar istek başarılı olmalı, kalanı reddedilmelidir.
       </p>
@@ -57,7 +57,7 @@ export function RaceTest({ products, barcode, onBarcodeChange, running, report, 
         disabled={running || !product}
         onClick={() => onRun(barcode, count)}
       >
-        {running ? '⏳ İstekler gönderiliyor…' : `🔥 ${count} Eşzamanlı İstek Gönder (Race Condition Testi)`}
+        {running ? 'İstekler gönderiliyor…' : `${count} Eşzamanlı İstek Gönder (Race Condition Testi)`}
       </button>
 
       {report && (
@@ -73,7 +73,7 @@ export function RaceTest({ products, barcode, onBarcodeChange, running, report, 
             {report.oversellingPrevented ? ' (Overselling Engellendi!)' : ' (OVERSELLING TESPİT EDİLDİ!)'}
             <div className="mt-0.5 text-xs font-normal opacity-80">
               {report.productName} · stok {report.initialAvailableStock} → {report.finalAvailableStock} · rezerve {report.finalReservedStock}
-              {report.stockConsistent ? ' · stok tutarlı ✔' : ' · stok TUTARSIZ ✖'}
+              {report.stockConsistent ? ' · stok tutarlı' : ' · stok TUTARSIZ'}
               {report.errorCount > 0 && ` · ${report.errorCount} hata`}
             </div>
           </div>

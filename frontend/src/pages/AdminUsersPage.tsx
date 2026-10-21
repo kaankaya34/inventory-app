@@ -105,14 +105,14 @@ function CreateUserForm({ catalog, onCreated }: { catalog: PermissionInfo[]; onC
   if (!open)
     return (
       <button className={`${btn} bg-indigo-600 text-white hover:bg-indigo-500`} onClick={() => setOpen(true)}>
-        ➕ Yeni Hesap Oluştur
+        Yeni Hesap Oluştur
       </button>
     )
 
   return (
     <form onSubmit={submit} className={`${card} space-y-3`}>
       <div className="flex items-center justify-between">
-        <h2 className="font-semibold">➕ Yeni Hesap</h2>
+        <h2 className="font-semibold">Yeni Hesap</h2>
         <button type="button" className="text-sm text-slate-500 underline" onClick={() => setOpen(false)}>Kapat</button>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
@@ -137,7 +137,7 @@ function CreateUserForm({ catalog, onCreated }: { catalog: PermissionInfo[]; onC
       {form.role === 'STAFF' && <PermissionPicker catalog={catalog} value={perms} onChange={setPerms} />}
       {form.role === 'ADMIN' && (
         <p className="rounded-lg bg-fuchsia-500/10 p-2 text-sm text-fuchsia-700 dark:text-fuchsia-300">
-          ⚠ Yönetici tüm yetkilere sahiptir (hesap yönetimi dahil). Yalnızca güvendiğiniz kişilere verin.
+          Yönetici tüm yetkilere sahiptir (hesap yönetimi dahil). Yalnızca güvendiğiniz kişilere verin.
         </p>
       )}
 
@@ -210,7 +210,7 @@ function UserRow({
         </div>
         <div className="flex flex-wrap gap-2 text-sm">
           <button className={`${btn} border border-indigo-500/60 py-1.5 text-indigo-600 hover:bg-indigo-500/10 dark:text-indigo-300`} onClick={() => setOpen((o) => !o)}>
-            {open ? 'Kapat' : isStaff ? '🛠️ Yetkileri düzenle' : '🛠️ Yetki ver'}
+            {open ? 'Kapat' : isStaff ? 'Yetkileri düzenle' : 'Yetki ver'}
           </button>
           <button className={outlineBtn} onClick={resetPassword}>Parola sıfırla</button>
         </div>
@@ -311,7 +311,7 @@ export default function AdminUsersPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">👥 Hesaplar ve Yetkiler</h1>
+        <h1 className="text-2xl font-bold">Hesaplar ve Yetkiler</h1>
         <p className="text-sm text-slate-500 dark:text-slate-400">
           Herkes tek hesapla (tek e-posta, tek parola) giriş yapar ve her zaman <b>müşteri</b>dir. Ona ek olarak <b>personel</b> (verdiğiniz yetkiler) veya{' '}
           <b>yönetici</b> (tam erişim) yapabilirsiniz. Yetkiler ayrı bir tabloda tutulur; yetkiyi kaldırınca kişi yine müşteri olarak kalır.

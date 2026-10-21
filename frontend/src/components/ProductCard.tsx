@@ -44,7 +44,7 @@ export function ProductCard({ product: p, selected, onSelect, onReserve, onResto
           <span className="whitespace-nowrap text-sm font-medium text-indigo-600 dark:text-indigo-400">{money(p.price)}</span>
         </div>
         <div className="mt-1 font-mono text-xs text-slate-500 dark:text-slate-400">
-          ▮▯▮▮ {p.barcode} · {p.sku}
+          {p.barcode} · {p.sku}
         </div>
       </button>
 

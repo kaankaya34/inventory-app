@@ -52,9 +52,9 @@ function Row({
             {mmss(remaining)}
           </div>
         )}
-        {r.status === 'CONFIRMED' && <span className="whitespace-nowrap text-emerald-600 dark:text-emerald-400">✅ Sipariş Onaylandı</span>}
-        {r.status === 'CANCELLED' && <span className="whitespace-nowrap text-slate-500">↩ İptal Edildi</span>}
-        {expired && <span className="text-right text-rose-500">⏰ Süresi Doldu (Stok İade Edildi)</span>}
+        {r.status === 'CONFIRMED' && <span className="whitespace-nowrap text-emerald-600 dark:text-emerald-400">Sipariş Onaylandı</span>}
+        {r.status === 'CANCELLED' && <span className="whitespace-nowrap text-slate-500">İptal Edildi</span>}
+        {expired && <span className="text-right text-rose-500">Süresi Doldu (Stok İade Edildi)</span>}
       </div>
 
       {live && canManage && (
@@ -92,7 +92,7 @@ export function ReservationList({ reservations, onConfirm, onCancel, canManage =
   return (
     <div className={card}>
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="font-semibold">⏳ Aktif Rezervasyonlar</h2>
+        <h2 className="font-semibold">Aktif Rezervasyonlar</h2>
         <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
           {activeCount} aktif
         </span>

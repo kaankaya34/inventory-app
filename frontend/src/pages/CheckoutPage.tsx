@@ -5,7 +5,7 @@ import { ApiError, api } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { useCart } from '../lib/cart'
 import type { Address, CheckoutPayload, SavedCard } from '../lib/types'
-import { btn, card, groupCardNumber, input, label, mmss, money, productEmoji } from '../lib/ui'
+import { btn, card, groupCardNumber, input, label, mmss, money } from '../lib/ui'
 import { useNow } from '../lib/useNow'
 
 function parseExpiry(v: string): { month: number; year: number } | null {
@@ -59,8 +59,7 @@ export default function CheckoutPage() {
   if (live.length === 0)
     return (
       <div className={`${card} mx-auto max-w-md py-10 text-center`}>
-        <div className="text-5xl">🛒</div>
-        <p className="mt-3 font-semibold">Sepetiniz boş veya ürünlerin rezervasyon süresi doldu.</p>
+        <p className="font-semibold">Sepetiniz boş veya ürünlerin rezervasyon süresi doldu.</p>
         <Link to="/" className={`${btn} mt-4 inline-block bg-indigo-600 text-white hover:bg-indigo-500`}>Mağazaya Dön</Link>
       </div>
     )
@@ -162,7 +161,7 @@ export default function CheckoutPage() {
           )}
 
           <div className="rounded-lg bg-slate-100 p-3 text-xs text-slate-600 dark:bg-slate-800/60 dark:text-slate-300">
-            🔒 Test ortamıdır, gerçek tahsilat yapılmaz. Test kartları: <code>4242 4242 4242 4242</code> (onay),{' '}
+            Test ortamıdır, gerçek tahsilat yapılmaz. Test kartları: <code>4242 4242 4242 4242</code> (onay),{' '}
             <code>4000 0000 0000 0002</code> (reddedilir), <code>4000 0000 0000 9995</code> (yetersiz bakiye). Tarih ileri, CVV herhangi 3 hane olabilir.
           </div>
         </section>
@@ -173,7 +172,7 @@ export default function CheckoutPage() {
         <ul className="space-y-1.5 text-sm">
           {live.map((l) => (
             <li key={l.reservationId} className="flex justify-between gap-2">
-              <span className="truncate">{productEmoji(l.sku)} {l.quantity} × {l.productName}</span>
+              <span className="truncate">{l.quantity} × {l.productName}</span>
               <span className="shrink-0">{money(l.lineTotal)}</span>
             </li>
           ))}
@@ -183,7 +182,7 @@ export default function CheckoutPage() {
           <span>{money(total)}</span>
         </div>
         <div className={`text-center text-xs font-medium ${remaining <= 60 ? 'text-rose-500' : 'text-amber-600 dark:text-amber-400'}`}>
-          ⏳ Rezervasyon süresi: <span className="font-mono">{mmss(remaining)}</span> — süre dolarsa ürünler serbest bırakılır
+          Rezervasyon süresi: <span className="font-mono">{mmss(remaining)}</span> — süre dolarsa ürünler serbest bırakılır
         </div>
         {error && <p className="rounded-lg bg-rose-500/10 p-2 text-sm text-rose-600 dark:text-rose-300">{error}</p>}
         <button className={`${btn} w-full bg-emerald-600 py-3 text-base text-white hover:bg-emerald-500`} disabled={busy}>

@@ -24,7 +24,7 @@ export function BarcodeSimulator({ value, onChange, onSubmit, products, sessionI
   return (
     <div className={card}>
       <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-semibold">📟 Barkod Simülatörü (El Terminali)</h2>
+        <h2 className="font-semibold">Barkod Simülatörü (El Terminali)</h2>
         <span className="text-xs text-slate-500 dark:text-slate-400">
           Oturum: <span className="font-mono">{sessionId}</span>
         </span>
@@ -43,7 +43,7 @@ export function BarcodeSimulator({ value, onChange, onSubmit, products, sessionI
           }}
         />
         <button className={`${btn} bg-indigo-600 text-white hover:bg-indigo-500`} disabled={!value.trim()} onClick={submit}>
-          Rezerve Et ⏎
+          Rezerve Et
         </button>
       </div>
 

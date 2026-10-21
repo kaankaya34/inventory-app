@@ -19,7 +19,7 @@ export default function AdminOrdersPage() {
     <div className="space-y-4">
       <header className="flex flex-wrap items-end justify-between gap-2">
         <div>
-          <h1 className="text-2xl font-bold">📦 Tüm Siparişler</h1>
+          <h1 className="text-2xl font-bold">Tüm Siparişler</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">Müşteri adres ve telefon bilgisi bu ekranda gösterilmez.</p>
         </div>
         {orders && (

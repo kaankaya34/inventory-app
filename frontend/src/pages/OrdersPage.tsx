@@ -19,10 +19,10 @@ export default function OrdersPage() {
 
       {justOrdered && (
         <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 text-emerald-700 dark:text-emerald-300">
-          ✅ Ödemeniz alındı ve siparişiniz oluşturuldu. Sipariş numaranız: <b className="font-mono">{justOrdered}</b>
+          Ödemeniz alındı ve siparişiniz oluşturuldu. Sipariş numaranız: <b className="font-mono">{justOrdered}</b>
         </div>
       )}
-      {error && <p className="text-sm text-rose-500">⚠ {error}</p>}
+      {error && <p className="text-sm text-rose-500">{error}</p>}
 
       {orders?.length === 0 && (
         <div className={`${card} py-10 text-center`}>

@@ -22,8 +22,7 @@ export function RequireAuth({
   if (!allowed)
     return (
       <div className={`${card} mx-auto max-w-md text-center`}>
-        <div className="text-3xl">🔒</div>
-        <p className="mt-2 font-semibold">Bu sayfa için yetkiniz yok.</p>
+        <p className="font-semibold">Bu sayfa için yetkiniz yok.</p>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Yetki için yöneticiyle iletişime geçin.</p>
       </div>
     )

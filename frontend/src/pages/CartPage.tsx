@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../lib/cart'
 import { useToast } from '../lib/toast'
-import { btn, card, mmss, money, productEmoji } from '../lib/ui'
+import { btn, card, mmss, money } from '../lib/ui'
 import { useNow } from '../lib/useNow'
 
 export default function CartPage() {
@@ -28,8 +28,7 @@ export default function CartPage() {
   if (live.length === 0)
     return (
       <div className={`${card} mx-auto max-w-md py-10 text-center`}>
-        <div className="text-5xl">🛒</div>
-        <h1 className="mt-3 text-lg font-semibold">Sepetiniz boş</h1>
+        <h1 className="text-lg font-semibold">Sepetiniz boş</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Sepete eklenen ürünler 5 dakika sonra otomatik olarak serbest bırakılır.
         </p>
@@ -46,17 +45,14 @@ export default function CartPage() {
         {live.map((l) => {
           const remaining = Math.min(l.remainingSeconds, Math.ceil((l.localExpiryMs - now) / 1000))
           return (
-            <div key={l.reservationId} className={`${card} flex items-center gap-4`}>
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 text-3xl">
-                {productEmoji(l.sku)}
-              </div>
+            <div key={l.reservationId} className={`${card} flex items-center justify-between gap-4`}>
               <div className="min-w-0 flex-1">
                 <div className="truncate font-semibold">{l.productName}</div>
                 <div className="text-sm text-slate-500 dark:text-slate-400">
                   {l.quantity} × {money(l.unitPrice)}
                 </div>
                 <div className={`mt-1 text-xs font-medium ${remaining <= 60 ? 'text-rose-500' : 'text-amber-600 dark:text-amber-400'}`}>
-                  ⏳ Sizin için ayrıldı: <span className="font-mono">{mmss(remaining)}</span>
+                  Sizin için ayrıldı: <span className="font-mono">{mmss(remaining)}</span>
                 </div>
               </div>
               <div className="text-right">
@@ -89,7 +85,7 @@ export default function CartPage() {
           <span>{money(total)}</span>
         </div>
         <button className={`${btn} w-full bg-emerald-600 py-3 text-base text-white hover:bg-emerald-500`} onClick={() => navigate('/odeme')}>
-          Ödemeye Geç →
+          Ödemeye Geç
         </button>
       </aside>
     </div>

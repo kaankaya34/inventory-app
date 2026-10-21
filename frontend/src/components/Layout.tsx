@@ -27,15 +27,15 @@ export function Layout() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 md:px-6">
           <Link to="/" className="text-xl font-extrabold tracking-tight">
-            ⚡ Flash<span className="text-indigo-500">Shop</span>
+            Flash<span className="text-indigo-500">Shop</span>
           </Link>
 
           <nav className="flex flex-1 flex-wrap items-center gap-1">
             <NavLink to="/" end className={navClass}>Mağaza</NavLink>
             {user && <NavLink to="/siparislerim" className={navClass}>Siparişlerim</NavLink>}
-            {can(PERM.StockView) && <NavLink to="/admin" end className={navClass}>📊 Stok Paneli</NavLink>}
-            {can(PERM.OrdersView) && <NavLink to="/admin/siparisler" className={navClass}>📦 Tüm Siparişler</NavLink>}
-            {isAdmin && <NavLink to="/admin/kullanicilar" className={navClass}>👥 Hesaplar ve Yetkiler</NavLink>}
+            {can(PERM.StockView) && <NavLink to="/admin" end className={navClass}>Stok Paneli</NavLink>}
+            {can(PERM.OrdersView) && <NavLink to="/admin/siparisler" className={navClass}>Tüm Siparişler</NavLink>}
+            {isAdmin && <NavLink to="/admin/kullanicilar" className={navClass}>Hesaplar ve Yetkiler</NavLink>}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export function Layout() {
               to="/sepet"
               className={`${btn} relative border border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800`}
             >
-              🛒 Sepet
+              Sepet
               {itemCount > 0 && (
                 <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-rose-500 px-1 text-[11px] font-bold text-white">
                   {itemCount}
@@ -54,7 +54,7 @@ export function Layout() {
             {user ? (
               <>
                 <Link to="/hesabim" className={`${btn} flex items-center gap-2 border border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800`}>
-                  👤 {user.fullName.split(' ')[0]}
+                  {user.fullName.split(' ')[0]}
                   {isStaff && (
                     <span className="rounded-full bg-fuchsia-500/15 px-2 py-0.5 text-xs text-fuchsia-600 dark:text-fuchsia-300">
                       {user.role === 'ADMIN' ? 'Yönetici' : 'Personel'}
@@ -81,7 +81,7 @@ export function Layout() {
               onClick={() => setDark((d) => !d)}
               title="Tema değiştir"
             >
-              {dark ? '☀️' : '🌙'}
+              {dark ? 'Açık' : 'Koyu'}
             </button>
           </div>
         </div>

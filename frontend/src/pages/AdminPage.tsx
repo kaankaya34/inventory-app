@@ -187,7 +187,7 @@ export default function AdminPage() {
     <div className="space-y-4">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold">📊 Stok Paneli</h1>
+          <h1 className="text-2xl font-bold">Stok Paneli</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">Atomik stok rezervasyonu · canlı akış</p>
         </div>
         <span className="flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-700">
@@ -198,7 +198,7 @@ export default function AdminPage() {
 
       {loadError && (
         <div className="rounded-lg border border-rose-500/40 bg-rose-500/10 p-3 text-sm text-rose-600 dark:text-rose-300">
-          ⚠ {loadError}{' '}
+          {loadError}{' '}
           <button className="underline" onClick={() => void loadAll()}>
             Tekrar dene
           </button>
