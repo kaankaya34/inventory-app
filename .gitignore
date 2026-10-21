@@ -1,5 +1,14 @@
+# bin/
+# obj/
+# node_modules/
+# dist/
+# App_Data/
+
+
 bin/
 obj/
 node_modules/
 dist/
-App_Data/
+*.key
+*credentials*
+appsettings.json

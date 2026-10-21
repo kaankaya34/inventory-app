@@ -2,7 +2,7 @@
 
 phpMyAdmin → **SQL** sekmesine yapıştırıp **Git** diyerek çalıştırın. Hangi bloğu çalıştıracağınız:
 
-| Durum | Çalıştırılacak blok 
+| Durum | Çalıştırılacak blok |
 |-------|---------------------|
 | Veritabanı hiç kurulmadı | **1) Sıfırdan kurulum** |
 | Yalnızca Faz 1 (stok motoru) kurulu; mağaza ve yetki tabloları eklenecek | **2) Faz 1'den yükseltme** |
